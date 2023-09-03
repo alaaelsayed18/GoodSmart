@@ -16,6 +16,8 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static org.testng.Assert.assertEquals;
+
 public class signup {
     AppiumDriver driver;
 
@@ -39,6 +41,7 @@ public class signup {
         driver.findElement(By.id("hussein.apps.talabaty:id/firstNameEditText")).sendKeys("test");
         driver.findElement(By.id("hussein.apps.talabaty:id/lastNameEditText")).sendKeys("demo");
         driver.findElement(By.id("hussein.apps.talabaty:id/phoneEditText")).sendKeys("01208864948");
+        assertEquals("test@test20.com","test@test20.com");
         driver.findElement(By.id("hussein.apps.talabaty:id/emailEditText")).sendKeys("test@test20.com");
         driver.findElement(By.id("hussein.apps.talabaty:id/passwordEditText")).sendKeys("test1234");
         driver.findElement(By.id("hussein.apps.talabaty:id/areaEditText")).click();
@@ -54,7 +57,9 @@ public class signup {
         driver.findElement(By.id("hussein.apps.talabaty:id/compoundEditText")).click();
         driver.findElement(By.id("hussein.apps.talabaty:id/firstNameEditText")).sendKeys("test2");
         driver.findElement(By.id("hussein.apps.talabaty:id/lastNameEditText")).sendKeys("demo2");
+
         driver.findElement(By.id("hussein.apps.talabaty:id/phoneEditText")).sendKeys("01286464948555552225");
+        assertEquals("a@78dhgg+25",  "a@gmail.com",  "mail format is not CorreCt");
         driver.findElement(By.id("hussein.apps.talabaty:id/emailEditText")).sendKeys("a@gmail.com");
         driver.findElement(By.id("hussein.apps.talabaty:id/passwordEditText")).sendKeys("test1234");
         driver.findElement(By.id("hussein.apps.talabaty:id/areaEditText")).click();
@@ -64,10 +69,5 @@ public class signup {
         driver.findElement(By.id("hussein.apps.talabaty:id/registerButton")).click();
 
     }
-@AfterTest
-    public void TearDown() {
 
-        if (driver != null) {
-            driver.quit();
-        }}
 }
